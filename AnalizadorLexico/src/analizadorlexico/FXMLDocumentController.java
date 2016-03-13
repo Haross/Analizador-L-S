@@ -49,7 +49,7 @@ public class FXMLDocumentController implements Initializable {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-         Gramatica g = new Gramatica(tokens);
+        Gramatica g = new Gramatica(tokens);
             g.P();
         
     }
@@ -68,6 +68,7 @@ public class FXMLDocumentController implements Initializable {
         Lexer lexer = new Lexer(reader);
         String Resultados="";
         
+        
         while (true) {            
             Token token = lexer.yylex();
             if(token ==null){
@@ -84,6 +85,26 @@ public class FXMLDocumentController implements Initializable {
                 case CAD:
                 case CO:
                 case ID:
+                case INCLUDE:
+                case MAIN:
+                case RETURN:
+                case WHILE:
+                case ExpLogica:
+                case print:
+                case coma: 
+                case puntoYComa:
+                case tipo:
+                case igual:
+                case suma: 
+                case multiplicacion:
+                case division: 
+                case resta: 
+                case PD:
+                case PI:
+                case EQUALS:
+                case DIF:
+                case LD:
+                case LI:
                 case Numero:
                     Resultados = Resultados + "\nToken: "+token+" "+lexer.save+"\n";
                     break;

@@ -46,8 +46,10 @@ impresion = "printf(\""{identificador}"\")"
 ";" {return puntoYComa;}
 "(" {return PI;}
 ")" {return PD;}
+"{" {return LI;}
+"}" {return LD;}
 "main" {save = yytext();return MAIN;}
-"#include <" {L} ({L}|{D})*"."{L} ({L}|{D})* ">" {save = yytext(); return INCLUDE;}
+"#include <stdio.h>" {save = yytext(); return INCLUDE;}
 {identificador} {save = yytext();return ID;}
 
 . {return ERROR;}
